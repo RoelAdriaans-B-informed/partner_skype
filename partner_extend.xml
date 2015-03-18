@@ -1,0 +1,36 @@
+<openerp>
+  <data>
+    <record id="view_partner_form_extend_skype" model="ir.ui.view">
+      <field name="name">res.partner.form.extend_skype</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="mobile" position="after">
+                <field name="skype" placeholder="Skype..." />
+        </field>
+          <!-- Add Skype  in inner contact form of child_ids -->
+        <xpath expr="//form[@string='Contact']/sheet//field[@name='mobile']" position="after">
+            <field name="skype" placeholder="Skype..." />
+        </xpath>
+
+
+
+      </field>
+    </record>
+
+    <record id="view_partner_simple_form_skype" model="ir.ui.view">
+      <field name="name">res.partner.simplified.form.skype</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_simple_form"/>
+      <field name="arch" type="xml">
+        <field name="mobile" position="after">
+            <field name="skype" placeholder="Skype..." />
+
+        </field>
+      </field>
+    </record>
+
+
+
+  </data>
+</openerp>
